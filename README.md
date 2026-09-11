@@ -84,3 +84,7 @@ make generate-tf-module-partials-with-config GENERATOR_CONFIG=path/to/tfmake.yml
 Build reports:
 
 <!-- END:BUILD_REPORTS -->
+
+Related Projects:
+
+* [TFMake](https://github.com/cliffano/tfmake) - Makefile for building Terraform modules
