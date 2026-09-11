@@ -82,4 +82,7 @@ generate-tf-module-partials-with-config: clean-tf-module-partials
 test-tf-module-partials: clean-tf-module-partials
 	make generate-tf-module-partials-with-config GENERATOR_CONFIG=examples/tfmake-tf-module-partials.yml
 
-.PHONY: ci clean clean-tf-module stage deps generate-tf-module generate-tf-module-with-config test-tf-module clean-tf-module-partials generate-tf-module-partials generate-tf-module-partials-with-config test-tf-module-partials
+update-tfmake-to-latest:
+	cd templates/tf-module && make update-to-latest
+
+.PHONY: ci clean clean-tf-module stage deps generate-tf-module generate-tf-module-with-config test-tf-module clean-tf-module-partials generate-tf-module-partials generate-tf-module-partials-with-config test-tf-module-partials update-tfmake-to-latest

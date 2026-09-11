@@ -1,3 +1,9 @@
+################################################################
+# TFMake: Makefile for building Terraform modules
+# https://github.com/cliffano/tfmake
+################################################################
+
+# TFMake's version number
 TFMAKE_VERSION = 1.1.1-pre.0
 
 ################################################################
@@ -56,4 +62,16 @@ doc:
 	stage/terraform-docs markdown . > stage/terraform-docs-output.md
 	sed -i '/# Terraform Doc/r stage/terraform-docs-output.md' README.md
 
-.PHONY: clean stage deps init style lint doc
+# Update Makefile to the latest version tag
+update-to-latest: TARGET_TFMAKE_VERSION = $(shell curl -s https://api.github.com/repos/cliffano/tfmake/tags | jq -r '.[0].name')
+update-to-latest: update-to-version
+
+# Update Makefile to the main branch
+update-to-main:
+	curl https://raw.githubusercontent.com/cliffano/tfmake/main/src/Makefile-tfmake -o Makefile
+
+# Update Makefile to the version defined in TARGET_TFMAKE_VERSION parameter
+update-to-version:
+	curl https://raw.githubusercontent.com/cliffano/tfmake/$(TARGET_TFMAKE_VERSION)/src/Makefile-tfmake -o Makefile
+
+.PHONY: clean stage deps init style lint doc update-to-latest update-to-main update-to-version
