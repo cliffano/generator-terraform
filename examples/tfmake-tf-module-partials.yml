@@ -1,0 +1,15 @@
+---
+package_name: generator-terraform
+author: Cliffano Subagio
+generator:
+  component: tf-module-partials
+  inputs:
+    project_id: tf-module project ID
+    project_name: tf-module project name
+    project_desc: tf-module project description
+    author_name: Cliffano Subagio
+    author_email: blah@cliffano.com
+    author_url: https://github.com/cliffano
+    github_id: cliffano
+    github_repo: generator-terraform
+    github_token_prefix: STUDIO
