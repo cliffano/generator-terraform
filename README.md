@@ -10,7 +10,7 @@
 
 # Generator Terraform
 
-Generator Terraform is Code generator for Terraform modules.
+Generator Terraform is a code generator for Terraform modules.
 
 It provides the following components:
 
